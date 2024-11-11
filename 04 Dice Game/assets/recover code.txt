@@ -1,0 +1,253 @@
+html
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gameControl">
+        <button class="newGame" onclick="resetGame()"><img src="./pics/reverse-img.png" height="17px" alt="">New Game</button>
+        <img src="./pics/1.png" id="diceImg" height="100px" class="diceImg" alt="">
+        <div class="btn-container">
+            <button class="rollDice" onclick="rollDice()"><img src="./pics/dice.png" height="17px" alt="">Roll Dice</button>
+            <button class="hold" onclick="hold()"><img src="./pics/hold.png" height="17px" alt="">Hold</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="gameArea1 turnColor" id="player1Area">
+            <div id="player1Name">Player 1</div>
+            <div class="score1">
+                <div id="totalScoreNumber1">0</div>
+            </div>
+            <div class="player1Score">
+                <div class="current1">Current</div>
+                <div id="currentScoreNumber1">0</div>
+            </div>
+        </div>
+
+        <div class="gameArea2" id="player2Area">
+            <div id="player2Name">Player 2</div>
+            <div class="score2">
+                <div id="totalScoreNumber2">0</div>
+            </div>
+            <div class="player2Score">
+                <div class="current2">Current</div>
+                <div id="currentScoreNumber2">0</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html> -->
+
+css 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, red, purple);
+}
+
+.main-container {
+    background-color: white;
+    opacity: 0.7;
+    width: 60%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    position: absolute;
+    z-index: 0;
+}
+
+.gameArea1 {
+    width: 50%;
+    height: 100%;
+    color: white;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.gameArea2 {
+    width: 50%;
+    height: 100%;
+    color: white;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.player1Area,
+.player2Area,
+.player1Score,
+.player2Score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+}
+
+#player1Name,
+#player2Name {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: black;
+    opacity: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.score1,
+.score2 {
+    color: rgb(214, 43, 72);
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.player1Score,
+.player2Score {
+    background-color: rgb(214, 43, 72);
+    padding: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 7px;
+    display: flex;
+    gap: 10px;
+}
+
+.current1,
+.current2 {
+    color: white;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#currentScoreNumber1,
+#currentScoreNumber2 {
+    color: white;
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.turnColor {
+    background-color: #ffd8d8;
+    /* opacity: 0.6; */
+    width: 50%;
+    height: 100%;
+}
+
+.gameControl {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    height: 80%;
+}
+
+.newGame {
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+border-radius: 40px;
+}
+
+.newGame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid white;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.rollDice {
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid white;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.hold {
+    padding: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid white;
+    cursor: pointer;
+    text-transform: uppercase;
+    opacity: .9;
+}
+
+.newGame:hover {
+    opacity: 0.8;
+}
+
+.rollDice:hover {
+    opacity: 0.8;
+}
+
+.hold:hover {
+    opacity: 0.8;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
